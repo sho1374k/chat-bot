@@ -1,0 +1,63 @@
+/* 全体 */
+.content{
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+
+/* モーダルアニメーション */
+.base {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  pointer-events: none;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.685);
+  transform-origin: center;
+  transform: scale(0, 0);
+  transition: all .3s ease;
+}
+.after {
+  pointer-events: auto;
+  opacity: 1;
+  transform: scale(1, 1);
+}
+.before {
+  opacity: 0;
+  transform: scale(0, 0);
+  transform-origin: center;
+  pointer-events: none;
+}
+/* モーダルの中 */
+.in-base {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.chat-list{
+  height: 400px;
+  width: 400px;
+  /* background-color: aquamarine; */
+  overflow: auto;
+}
