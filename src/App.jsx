@@ -1,15 +1,17 @@
 import React from "react";
-import "./assets/reset.css";
-import "./assets/style.css";
+import "./assets/css/reset.css";
+import "./assets/css/style.css";
 
 import Modal from 'react-modal';
 
-import {OpenBtn} from "./components/open-btn";
 import {CloseBtn} from "./components/close-btn";
 
-import {ChatData} from "./chat-data"
+import {ChatData} from "./components/chat-data"
 
 import {Form} from "./components/form";
+
+import {Answer} from "./components/answer"
+import {Chat} from "./components/chat"
 
 class App extends React.Component {
   constructor(props){
@@ -27,13 +29,10 @@ class App extends React.Component {
 
   nextQuestion(nextId){
     const chats = this.state.chats
-    console.log(nextId, "nextId")                      //『chat-data.js』のcurrentIdがどれかを確認
-
     chats.push({
       text: this.state.chatData[nextId].question,      //そのIDの『question』をプッシュする
       type: "question",                                //answersではなくquestion
     })
-
     this.setState({
       answers: this.state.chatData[nextId].answers,    //answersには取得したIDのanswersを保存
       chats: chats,                                    //プッシュしたものを保存
@@ -87,90 +86,48 @@ class App extends React.Component {
     }
   }
 
-  // 
   openMenu(){
     this.setState({
       open: true
     })
-    console.log(this.state.open)
   }
 
   closeMenu(){
     this.setState({
       open: false
     })
-    console.log(this.state.open)
   }
-  // 
 
   render(){
     return(
       <div className="content">
         <div className="chat-bot">
-          <div className="chat-list" id="scroll-area">
-            {this.state.chats.map((chat, i) => {
-              const BotAnswer = (chat.type === "question");        //questionである
-              console.log(BotAnswer, "type")
-              return(
-                <div className="chat-box">
-                  {BotAnswer?(
-                    <>
-                      <div className="avator">botです</div>
-                      <div className="in-chat" key={i.toString()}>
-                        {chat.text}
-                      </div>
-                    </>
-                  ):(
-                    <>
-                      <div className="avator">guestです</div>
-                      <div className="in-chat" key={i.toString()}>
-                        {chat.text}
-                      </div>
-                    </>
-                  )}
-                </div>
-              )
-            })}
-          </div>
-          <div className="answer-list">
-            {this.state.answers.map((value, i) => {
-              return(
-                <button className="btn-answer" key={i.toString()} onClick={() => this.selectAnswer(value.content, value.nextId)}>
-                  {value.content}
-                </button>
-
-              )
-            })}
-          </div>
+          <Chat 
+           chats={this.state.chats}
+          />
+          <Answer 
+            answers={this.state.answers}
+            selectAnswer={this.selectAnswer}
+          />
         </div>
-
-        <Modal                                 //モーダルウィンドウ
+        <Modal
           isOpen={this.state.open}
-          // onRequestClose={this.closeMenu}
           overlayClassName={{               //モーダルウィンドウ設定クラス
             base: "base",                   //ベース
             afterOpen: "after",             //開く時
             beforeClose: "before"           //閉まる時
           }}
-          // モーダルウィンドウの中のコンテンツ『アニメーションつける際に必要』
-          className={{
-            base: "in-base",
-          }}
+          className={{base: "in-base"}}
           closeTimeoutMS={300}
           >
           <CloseBtn 
             closeMenu={this.closeMenu}
           />
-
           <Form 
             closeMenu={this.closeMenu}
           />
-
         </Modal>
-
-
       </div>
-      
     )
   }
 }
