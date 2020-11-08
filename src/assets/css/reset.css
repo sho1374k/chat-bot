@@ -123,3 +123,8 @@ a {
   -webkit-tap-highlight-color:rgba(0,0,0,0);
   cursor:pointer;
 }
+/* input オートコンプリートの背景色解除 */
+input:-webkit-autofill {
+  animation-name: onAutoFillStart;
+  transition: background-color 50000s ease-in-out 0s;
+}

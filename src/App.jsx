@@ -1,17 +1,12 @@
 import React from "react";
 import "./assets/css/reset.css";
 import "./assets/css/style.css";
-
 import Modal from 'react-modal';
-
 import {CloseBtn} from "./components/close-btn";
-
 import {ChatData} from "./components/chat-data"
-
 import {Form} from "./components/form";
-
-import {Answer} from "./components/answer"
 import {Chat} from "./components/chat"
+import { animateScroll as scroll } from 'react-scroll';
 
 class App extends React.Component {
   constructor(props){
@@ -33,31 +28,30 @@ class App extends React.Component {
       text: this.state.chatData[nextId].question,      //そのIDの『question』をプッシュする
       type: "question",                                //answersではなくquestion
     })
+    scroll.scrollToBottom();
     this.setState({
       answers: this.state.chatData[nextId].answers,    //answersには取得したIDのanswersを保存
       chats: chats,                                    //プッシュしたものを保存
       currentId: nextId,                               //取得したIDを保存
     })
+    scroll.scrollToBottom();
   }
 
   selectAnswer(value, nextId){
     switch (true) {                        //caseの条件がtrueであるか
       case (nextId === "initial"):         //nextId(currentId)がinitialと等しいか
         // setaTimeoutで遅延
-        setTimeout(() => this.nextQuestion(nextId), 500)          //nextId(currentId)をnextQuestionに引数として渡す
+        setTimeout(() => this.nextQuestion(nextId), 100)          //nextId(currentId)をnextQuestionに引数として渡す
         break;
-
       case(/^https:*/.test(nextId)):       //testメゾットで正規表記の『https:』が含まれているか検索する
         const a = document.createElement("a");
         a.href = nextId;                   //hrefをnextIdのリンクに指定
         a.target = "_blank";               //targetはブランク指定
         a.click();                         //クリック可能にする
         break;
-
       case(nextId === "contact"):
         this.openMenu()
         break;
-    
       default:                             //初期値ではない場合
         const chats = this.state.chats;    //チャットの内容を取得する
         chats.push({
@@ -67,7 +61,7 @@ class App extends React.Component {
         this.setState({
           chats: chats                     //chats更新
         })
-        setTimeout(() =>  this.nextQuestion(nextId), 500)          //nextQuestionに次のIDを引数として渡す
+        setTimeout(() =>  this.nextQuestion(nextId), 100)          //nextQuestionに次のIDを引数として渡す
         break;
     }
   }
@@ -86,28 +80,45 @@ class App extends React.Component {
     }
   }
 
+  // モーダル開く
   openMenu(){
     this.setState({
       open: true
     })
   }
 
+  // モーダル閉じる
   closeMenu(){
     this.setState({
       open: false
     })
   }
-
   render(){
     return(
+      <>
+      <header>
+        <div className="title-box">
+          <div className="title-field">
+            Chat Bot
+          </div>
+        </div>
+        <div className="answer-list">
+          {this.state.answers.map((value, i) => {
+            return(
+              <button className="btn-answer" key={i.toString()} 
+                onClick={() => this.selectAnswer(value.content, value.nextId)}
+                >
+                {value.content}
+              </button>
+            )
+          })}
+        </div>
+      </header>
+      <div className="space"></div>
       <div className="content">
         <div className="chat-bot">
           <Chat 
            chats={this.state.chats}
-          />
-          <Answer 
-            answers={this.state.answers}
-            selectAnswer={this.selectAnswer}
           />
         </div>
         <Modal
@@ -119,7 +130,7 @@ class App extends React.Component {
           }}
           className={{base: "in-base"}}
           closeTimeoutMS={300}
-          >
+        >
           <CloseBtn 
             closeMenu={this.closeMenu}
           />
@@ -128,6 +139,10 @@ class App extends React.Component {
           />
         </Modal>
       </div>
+      <div className="space2">
+        © 2020 K's
+      </div>
+      </>
     )
   }
 }

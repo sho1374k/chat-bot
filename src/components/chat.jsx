@@ -1,4 +1,6 @@
 import React from "react";
+import MyImg from "../assets/img/my.jpeg"
+import NoIcon from "../assets/img/no-profile.jpg"
 
 export const Chat = (props) => {
   return(
@@ -6,11 +8,13 @@ export const Chat = (props) => {
       {props.chats.map((chat, i) => {
         const BotAnswer = (chat.type === "question");        //questionである
         return(
-          <div className="chat-box">
+          <div className="chat-box wrapper">
             {BotAnswer?(
               //ボット
               <div className="left">
-                <div className="avator">botです</div>
+                <div className="avator">
+                  <img src={MyImg} className="icon-img" alt="bot" />
+                </div>
                 <div className="in-chat" key={i.toString()}>
                   {chat.text}
                 </div>
@@ -18,7 +22,9 @@ export const Chat = (props) => {
             ):(
               //ゲスト
               <div className="right">
-                <div className="avator">guestです</div>
+                <div className="avator">
+                  <img src={NoIcon} className="icon-img" alt="guest" />
+                </div>
                 <div className="in-chat" key={i.toString()}>
                   {chat.text}
                 </div>

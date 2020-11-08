@@ -6,7 +6,7 @@ export const CloseBtn = (props) => {
       className="close-btn"
       onClick={props.closeMenu}
     >
-      閉じる
+      X
     </button> 
   )
 }

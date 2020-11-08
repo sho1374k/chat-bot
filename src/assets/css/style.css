@@ -1,16 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
 /* 全体 */
+body{
+  background: #EEF0F4;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
 .content{
-  height: 100vh;
+  height: 100%;
   width: 100vw;
+}
+header{
+  height: 200px;
+  width: 100%;
+  position: fixed;
+  z-index: 5000;
+  transform: translateZ(5000px);
+  background: #EEF0F4;
+  box-shadow: 0px 0px 5px rgba(162, 162, 162, 0.571);
+}
+.title-box{
+  height: 100px;
+  width: 150px;
+  margin: auto;
   position: relative;
 }
+.title-field{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  height: 60px;
+  width: 150px;
+  background: #EEF0F4;
+  border-radius: 10px;
+  box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px #fff;
+  text-align: center;
+  line-height: 60px;
 
+}
+.space{
+  height: 250px;
+  width: 100%;
+}
+.space2{
+  height: 30px;
+  width: 100%;
+  text-align: center;
+  line-height: 30px;
+  font-size: 10px;
+}
+
+/* アンサー */
+.answer-list{
+  height: 100px;
+  width: 95%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-answer{
+  display: inline-block;
+  height: 50px;
+  width: 120px;
+  margin: 10px;
+  background: #EEF0F4;
+  box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF;  
+  border: 0;
+  outline: none;
+  border-radius: 10px;
+  color: dimgray;
+  transition: .5s;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  cursor: pointer;
+}
+.btn-answer:hover{
+  box-shadow:  inset 2px 2px 5px #babecc77, inset -5px -5px 10px #fff;
+}
+/* チャットボット */
+.chat-bot{
+  height: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  width: 450px;
+  background: #EEF0F4;
+  border-radius: 10px;
+  box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px #fff;
+  margin: auto;
+}
+/* チャット */
+.chat-list{
+  height: 100%;
+  width: 100%;
+}
+.chat-box{
+  display: flex;
+  height: 70px;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  position: relative;
+}
+.left{
+  position: absolute;
+  top: 0;
+  left: 15px;
+  display: flex;
+  height: 70px;
+  width: 220px;
+  border-radius: 10px;
+  background: #EEF0F4;
+  box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF; 
+}
+.right{
+  position: absolute;
+  top: 0;
+  right: 15px;
+  display: flex;
+  height: 100%;
+  width: 220px;
+  border-radius: 10px;
+  background: #EEF0F4;
+  box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF; 
+}
+.avator{
+  height: 55px;
+  width: 55px;
+  background: #EEF0F4;
+  box-shadow: 5px 5px 10px #D9DADE, -5px -5px 10px #FFFFFF; 
+  border-radius: 100px;
+  position: relative;
+  top: 8px;
+  left: 8px;
+}
+.icon-img{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+}
+.in-chat{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 70px;
+  width: 157px;
+  line-height: 70px;
+  text-align: center;
+  font-size: 12px;
+}
 
 /* モーダルアニメーション */
 .base {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 9999;
+  transform: translateZ(9999px);
   height: 100vh;
   width: 100vw;
   pointer-events: none;
@@ -39,25 +191,119 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  height: 300px;
-  width: 300px;
-  background-color: #fff;
+  height: 550px;
+  width: 450px;
+  background: #EEF0F4;
+  border-radius: 10px;
+}
+/* フォーム */
+.form-content{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 480px;
+  width: 400px;
+  margin: auto;
+}
+.email-box,
+.name-box{
+  height: 50px;
+  width: 100%;
+  border-radius: 10px;
+  border: 0;
+  outline: none;
+  background: #EEF0F4;
+  box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px #fff;
+  color: dimgray;
+  text-align: center;
 }
 
+.email-box::placeholder,
+.name-box::placeholder{
+  font-size: 12px;
+  text-align: center;
+}
+.text-box::placeholder{
+  font-size: 12px;
+  text-align: center;
+  line-height: 150px;
+}
+.text-box{
+  height: 150px;
+  width: 100%;
+  border-radius: 10px;
+  border: 0;
+  outline: none;
+  background: #EEF0F4;
+  box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px #fff;
+  resize: none;
+  color: dimgray;
+  text-align: center;
+}
+.input-label{
+  display: inline-block;
+  padding-top: 20px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.input-label span{
+  margin-left: 10px;
+  color: red;
+}
+.email-box:focus,
+.name-box:focus,
+.text-box:focus {
+  box-shadow:  inset 1px 1px 2px #BABECC, inset -1px -1px 2px #fff;
+}
+.submit-btn{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 50px;
+  width: 100px;
+  border-radius: 10px;
+  border: 0;
+  outline: none;
+  background: #EEF0F4;
+  box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF; 
+  color: dimgray;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+.submit-btn:hover{
+  box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px #fff;
+  color: #00aced;
+}
+.close-btn{
+  position: absolute;
+  top: -20px;
+  right: -15px;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  background: #EEF0F4;
+  border: 0;
+  outline: none;
+  border-radius: 100px;
+  box-shadow: 0px 0px 5px rgba(162, 162, 162, 0.571);
+  font-size: 18px;
+  color: dimgray;
+  transition: .5s;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+.close-btn:hover{
+  color: #fff;
+  background-color: red;
+}
 
-
-
-
-
-
-
-
-
-
-
-.chat-list{
-  height: 400px;
-  width: 400px;
-  /* background-color: aquamarine; */
-  overflow: auto;
+.wrapper{
+  animation: fadeIn .8s;
+}
+@keyframes fadeIn{
+  /* フェード */
+  0% { opacity: 0 ;}
+  100% { opacity: 1 ;}
 }
