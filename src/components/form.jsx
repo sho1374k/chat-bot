@@ -107,7 +107,7 @@ export class Form extends React.Component {
         <label className="input-label">
           お名前
           <span>必須</span>
-          { error.name && <span className="wrapper">※お名前を入力してください</span>}
+          { error.name && <span className="wrapper error-text">※お名前を入力してください</span>}
         </label>
         <input 
           className="name-box"
@@ -121,8 +121,8 @@ export class Form extends React.Component {
         <label className="input-label">
           メールアドレス
           <span>必須</span>
-          { error.email && <span className="wrapper">※メールアドレスを入力してください</span>}
-          { error.format &&  <span className="wrapper">※フォーマットが正しくありません</span>}
+          { error.email && <span className="wrapper error-text">※アドレスを入力してください</span>}
+          { error.format &&  <span className="wrapper error-text">※フォーマットが正しくありません</span>}
         </label>
         <input 
           className="email-box"
@@ -136,7 +136,7 @@ export class Form extends React.Component {
         <label className="input-label">
           お問い合わせ項目
           <span>必須</span>
-          { error.info && <span className="wrapper">※内容を入力してください</span>}
+          { error.info && <span className="wrapper error-text">※内容を入力してください</span>}
         </label>
         <textarea 
           className="text-box"

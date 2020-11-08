@@ -9,7 +9,7 @@ export const ChatData = {
   },
   "portfolio": {
       answers: [
-          {content: "ポートフォリオ", nextId: "https://portfolio-helloworld.herokuapp.com/"},
+          {content: "Portfolio", nextId: "https://portfolio-helloworld.herokuapp.com/"},
           {content: "GitHub", nextId: "https://github.com/sho1374k"},
           {content: "最初に戻る", nextId: "initial"}
       ],

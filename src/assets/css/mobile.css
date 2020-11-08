@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
-@media print, screen and (min-width: 640px) {
-/* 全体 */
+@media screen and (max-width: 640px) {
 body{
   background: #EEF0F4;
   font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -10,7 +9,7 @@ body{
   width: 100vw;
 }
 header{
-  height: 200px;
+  height: 150px;
   width: 100%;
   position: fixed;
   z-index: 5000;
@@ -19,7 +18,7 @@ header{
   box-shadow: 0px 0px 5px rgba(162, 162, 162, 0.571);
 }
 .title-box{
-  height: 100px;
+  height: 70px;
   width: 150px;
   margin: auto;
   position: relative;
@@ -31,30 +30,29 @@ header{
   left: 0;
   bottom: 0;
   margin: auto;
-  height: 60px;
-  width: 150px;
+  height: 50px;
+  width: 120px;
   background: #EEF0F4;
   border-radius: 10px;
   box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px #fff;
   text-align: center;
-  line-height: 60px;
-
+  line-height: 50px;
 }
 .space{
-  height: 250px;
+  height: 170px;
   width: 100%;
 }
 .space2{
   height: 30px;
-  width: 100%;
+  width: 100px;
+  margin: auto;
   text-align: center;
   line-height: 30px;
   font-size: 10px;
 }
-
 /* アンサー */
 .answer-list{
-  height: 100px;
+  height: 80px;
   width: 95%;
   margin: auto;
   display: flex;
@@ -74,6 +72,7 @@ header{
   color: dimgray;
   transition: .5s;
   font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 11px;
   cursor: pointer;
 }
 .btn-answer:hover{
@@ -82,10 +81,9 @@ header{
 /* チャットボット */
 .chat-bot{
   height: 100%;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  width: 450px;
-  background: #EEF0F4;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 300px;
   border-radius: 10px;
   box-shadow:  inset 2px 2px 5px #BABECC, inset -5px -5px 10px #fff;
   margin: auto;
@@ -97,10 +95,10 @@ header{
 }
 .chat-box{
   display: flex;
-  height: 70px;
+  height: 60px;
   width: 100%;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   position: relative;
 }
 .left{
@@ -108,8 +106,8 @@ header{
   top: 0;
   left: 15px;
   display: flex;
-  height: 70px;
-  width: 220px;
+  height: 100%;
+  width: 200px;
   border-radius: 10px;
   background: #EEF0F4;
   box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF; 
@@ -120,20 +118,20 @@ header{
   right: 15px;
   display: flex;
   height: 100%;
-  width: 220px;
+  width: 200px;
   border-radius: 10px;
   background: #EEF0F4;
   box-shadow: 9.91px 9.91px 15px #D9DADE, -9.91px -9.91px 15px #FFFFFF; 
 }
 .avator{
-  height: 55px;
-  width: 55px;
+  height: 50px;
+  width: 50px;
   background: #EEF0F4;
   box-shadow: 5px 5px 10px #D9DADE, -5px -5px 10px #FFFFFF; 
   border-radius: 100px;
   position: relative;
-  top: 8px;
-  left: 8px;
+  top: 5px;
+  left: 5px;
 }
 .icon-img{
   position: absolute;
@@ -142,19 +140,19 @@ header{
   left: 0;
   bottom: 0;
   margin: auto;
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
   border-radius: 100px;
 }
 .in-chat{
   position: absolute;
   top: 0;
   right: 0;
-  height: 70px;
-  width: 157px;
-  line-height: 70px;
+  height: 60px;
+  width: 142px;
+  line-height: 60px;
   text-align: center;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 /* モーダルアニメーション */
@@ -192,8 +190,8 @@ header{
   right: 0;
   bottom: 0;
   margin: auto;
-  height: 550px;
-  width: 450px;
+  height: 400px;
+  width: 280px;
   background: #EEF0F4;
   border-radius: 10px;
 }
@@ -204,13 +202,13 @@ header{
   right: 0;
   left: 0;
   bottom: 0;
-  height: 480px;
-  width: 400px;
+  height: 400px;
+  width: 260px;
   margin: auto;
 }
 .email-box,
 .name-box{
-  height: 50px;
+  height: 45px;
   width: 100%;
   border-radius: 10px;
   border: 0;
@@ -223,16 +221,16 @@ header{
 
 .email-box::placeholder,
 .name-box::placeholder{
-  font-size: 12px;
+  font-size: 11px;
   text-align: center;
 }
 .text-box::placeholder{
-  font-size: 12px;
+  font-size: 11px;
   text-align: center;
-  line-height: 150px;
+  line-height: 130px;
 }
 .text-box{
-  height: 150px;
+  height: 130px;
   width: 100%;
   border-radius: 10px;
   border: 0;
@@ -245,13 +243,16 @@ header{
 }
 .input-label{
   display: inline-block;
-  padding-top: 20px;
+  padding-top: 15px;
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 10px;
 }
 .input-label span{
-  margin-left: 10px;
+  margin-left: 4px;
   color: red;
+}
+.error-text{
+  font-size: 10px;
 }
 .email-box:focus,
 .name-box:focus,
@@ -260,12 +261,13 @@ header{
 }
 .submit-btn{
   position: absolute;
-  bottom: 0;
+  bottom: 15px;
   left: 0;
   right: 0;
   margin: auto;
-  height: 50px;
-  width: 100px;
+  height: 40px;
+  width: 90px;
+  font-size: 12px;
   border-radius: 10px;
   border: 0;
   outline: none;
@@ -280,11 +282,11 @@ header{
 }
 .close-btn{
   position: absolute;
-  top: -20px;
-  right: -15px;
+  top: -18px;
+  right: -12px;
   display: inline-block;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   background: #EEF0F4;
   border: 0;
   outline: none;
@@ -299,7 +301,6 @@ header{
   color: #fff;
   background-color: red;
 }
-
 .wrapper{
   animation: fadeIn .8s;
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import "./assets/css/reset.css";
 import "./assets/css/style.css";
+import "./assets/css/mobile.css";
 import Modal from 'react-modal';
 import {CloseBtn} from "./components/close-btn";
 import {ChatData} from "./components/chat-data"
