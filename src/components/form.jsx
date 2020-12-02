@@ -78,7 +78,7 @@ export class Form extends React.Component {
               "お問い合わせ内容 : \n" + info
       }
       // スラックのURL
-      const url = "https://hooks.slack.com/services/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"
+      const url = "https://hooks.slack.com/services/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"
       // JSON
       fetch(url, {
         method: "POST",                    // 通信
