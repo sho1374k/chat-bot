@@ -78,7 +78,7 @@ export class Form extends React.Component {
               "お問い合わせ内容 : \n" + info
       }
       // スラックのURL
-      const url = "https://hooks.slack.com/services/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"
+      const url = process.env.REACT_APP_SLACK_URL;
       // JSON
       fetch(url, {
         method: "POST",                    // 通信
@@ -116,8 +116,7 @@ export class Form extends React.Component {
           placeholder="佐々木琲世" 
           value={this.state.name}
           onChange={this.inputName}
-        >
-        </input>
+        />
         <label className="input-label">
           メールアドレス
           <span>必須</span>
@@ -131,8 +130,7 @@ export class Form extends React.Component {
           placeholder="例）haise@ghoul.com" 
           value={this.state.email}
           onChange={this.inputEmail}
-        >
-        </input>
+        />
         <label className="input-label">
           お問い合わせ項目
           <span>必須</span>

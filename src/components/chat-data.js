@@ -2,14 +2,14 @@ export const ChatData = {
   "initial": {
       answers: [
           {content: "成果物を見る", nextId: "portfolio"},
-          {content: "ブログを見る", nextId: "https://kajita-blog-site.netlify.app/"},
+          {content: "ブログを見る", nextId: "https://ks-official.com/"},
           {content: "お問い合わせ", nextId: "message"},
       ],
       question: "ご用件を伺います",
   },
   "portfolio": {
       answers: [
-          {content: "Portfolio", nextId: "https://portfolio-helloworld.herokuapp.com/"},
+          {content: "Portfolio", nextId: "https://portfolio-hello-world.netlify.app/"},
           {content: "GitHub", nextId: "https://github.com/sho1374k"},
           {content: "最初に戻る", nextId: "initial"}
       ],
