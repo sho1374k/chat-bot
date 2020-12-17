@@ -8,7 +8,7 @@ export const Chat = (props) => {
       {props.chats.map((chat, i) => {
         const BotAnswer = (chat.type === "question");        //questionである
         return(
-          <div className="chat-box wrapper">
+          <div className="chat-box wrapper" key={i}>
             {BotAnswer?(
               //ボット
               <div className="left">

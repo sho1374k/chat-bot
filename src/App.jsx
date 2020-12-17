@@ -129,15 +129,18 @@ class App extends React.Component {
             afterOpen: "after",             //開く時
             beforeClose: "before"           //閉まる時
           }}
-          className={{base: "in-base"}}
           closeTimeoutMS={300}
+          ariaHideApp={false}
         >
-          <CloseBtn 
-            closeMenu={this.closeMenu}
-          />
-          <Form 
-            closeMenu={this.closeMenu}
-          />
+          <div className="in-base">
+            <CloseBtn 
+              closeMenu={this.closeMenu}
+            />
+            <Form 
+              closeMenu={this.closeMenu}
+            />
+          </div>
+          
         </Modal>
       </div>
       <div className="space2">

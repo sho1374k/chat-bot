@@ -38,7 +38,7 @@ export class Form extends React.Component {
 
   submitForm(){
     const {name, email, info}  = this.state;         //コンストラクター読み込み
-    const format = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    const format = /^[a-zA-Z0-9.!#$%&'*+=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
     if (name === "") {
       if (email === "") {
         if (info === "") {
